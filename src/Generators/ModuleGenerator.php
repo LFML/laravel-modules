@@ -338,7 +338,7 @@ class ModuleGenerator extends Generator
 
         $this->console->call('module:make-provider', [
             'module' => $this->getName(),
-            'name' => "App",
+            'name' => "AppServiceProvider",
         ]);
         $this->console->call('module:route-provider', [
             'module' => $this->getName(),
