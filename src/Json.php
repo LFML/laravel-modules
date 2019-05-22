@@ -61,7 +61,6 @@ class Json
     public function setFilesystem(Filesystem $filesystem)
     {
         $this->filesystem = $filesystem;
-
         return $this;
     }
 
