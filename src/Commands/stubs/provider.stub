@@ -2,7 +2,7 @@
 
 namespace $NAMESPACE$;
 
-use Illuminate\Support\ServiceProvider;
+use Laravel\Modules\Providers\ModuleAppServiceProvider as ServiceProvider;
 
 class $CLASS$ extends ServiceProvider
 {

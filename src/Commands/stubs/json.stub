@@ -6,9 +6,11 @@
     "active": 1,
     "order": 0,
     "providers": [
-        "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\Providers\\$STUDLY_NAME$ServiceProvider"
+        "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\app\\Providers\\$STUDLY_NAME$ServiceProvider"
     ],
     "aliases": {},
-    "files": [],
+    "files": [
+    "helpers/helpers.php"
+    ],
     "requires": []
 }

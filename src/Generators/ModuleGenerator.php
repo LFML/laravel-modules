@@ -65,9 +65,9 @@ class ModuleGenerator extends Generator
      * The constructor.
      * @param $name
      * @param FileRepository $module
-     * @param Config     $config
+     * @param Config $config
      * @param Filesystem $filesystem
-     * @param Console    $console
+     * @param Console $console
      */
     public function __construct(
         $name,
@@ -75,7 +75,8 @@ class ModuleGenerator extends Generator
         Config $config = null,
         Filesystem $filesystem = null,
         Console $console = null
-    ) {
+    )
+    {
         $this->name = $name;
         $this->config = $config;
         $this->filesystem = $filesystem;
@@ -282,9 +283,10 @@ class ModuleGenerator extends Generator
                 continue;
             }
 
-            $path = $this->module->getModulePath($this->getName()) . '/' . $folder->getPath();
+            $path = module_make_path([$this->module->getModulePath($this->getName()), $folder->getPath()]);
 
-            $this->filesystem->makeDirectory($path, 0755, true);
+            if (!file_exists($path))
+                $this->filesystem->makeDirectory($path, 0755, true);
             if (config('modules.stubs.gitkeep')) {
                 $this->generateGitKeep($path);
             }
@@ -432,7 +434,7 @@ class ModuleGenerator extends Generator
         $namespace = $this->getModuleNamespaceReplacement();
         $studlyName = $this->getStudlyNameReplacement();
 
-        $provider = '"' . $namespace . '\\\\' . $studlyName . '\\\\Providers\\\\' . $studlyName . 'ServiceProvider"';
+        $provider = '"' . $namespace . '\\\\' . $studlyName . '\\\\app\\\\Providers\\\\' . $studlyName . 'ServiceProvider"';
 
         $content = str_replace($provider, '', $content);
 
