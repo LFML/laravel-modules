@@ -1,6 +1,6 @@
 # Changelog
 
-All Notable changes to `laravel-modules` will be documented in this file.
+All Notable changes to `modules` will be documented in this file.
 
 ## Next
 
@@ -156,7 +156,7 @@ All Notable changes to `laravel-modules` will be documented in this file.
 ## Changed
 
 - added config_path helper to helpers for Lumen support
-- updated readme on how to install laravel-modules in Lumen
+- updated readme on how to install modules in Lumen
 
 ## 2.5.0 - 2017-10-03
 
