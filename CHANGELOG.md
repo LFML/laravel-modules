@@ -1,8 +1,13 @@
 # Changelog
 
-All Notable changes to `modules` will be documented in this file.
+All Notable changes to `laravel-modules` will be documented in this file.
 
 ## Next
+
+### Changed
+
+- Replacing `@stop` with `@endsection` in the view stub file
+- `Module` class does not extend Laravel's Service Provider class anymore
 
 ### Added
 
@@ -76,7 +81,7 @@ All Notable changes to `modules` will be documented in this file.
 
 ### Added
 
-- Laravel mix configuration (https://Laravel.com/modules/v3/basic-usage/compiling-assets)
+- Laravel mix configuration (https://nwidart.com/laravel-modules/v3/basic-usage/compiling-assets)
 
 ### Changed
 
@@ -151,7 +156,7 @@ All Notable changes to `modules` will be documented in this file.
 ## Changed
 
 - added config_path helper to helpers for Lumen support
-- updated readme on how to install modules in Lumen
+- updated readme on how to install laravel-modules in Lumen
 
 ## 2.5.0 - 2017-10-03
 
@@ -460,7 +465,7 @@ All Notable changes to `modules` will be documented in this file.
 
 ### Fixed
 
-- Module generation namespace now works with `StudlyCase` ([Issue #14](https://github.com/Laravel/modules/issues/14))
+- Module generation namespace now works with `StudlyCase` ([Issue #14](https://github.com/nWidart/laravel-modules/issues/14))
 - No module namespace fix (#13)
 
 ### Changed

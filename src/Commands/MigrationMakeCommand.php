@@ -66,9 +66,8 @@ class MigrationMakeCommand extends GeneratorCommand
     }
 
     /**
-     * @throws \InvalidArgumentException
-     *
      * @return mixed
+     * @throws \InvalidArgumentException
      */
     protected function getTemplateContents()
     {

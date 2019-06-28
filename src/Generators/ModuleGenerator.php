@@ -75,8 +75,7 @@ class ModuleGenerator extends Generator
         Config $config = null,
         Filesystem $filesystem = null,
         Console $console = null
-    )
-    {
+    ) {
         $this->name = $name;
         $this->config = $config;
         $this->filesystem = $filesystem;
@@ -285,8 +284,7 @@ class ModuleGenerator extends Generator
 
             $path = module_make_path([$this->module->getModulePath($this->getName()), $folder->getPath()]);
 
-            if (!file_exists($path))
-                $this->filesystem->makeDirectory($path, 0755, true);
+            $this->filesystem->makeDirectory($path, 0755, true);
             if (config('modules.stubs.gitkeep')) {
                 $this->generateGitKeep($path);
             }

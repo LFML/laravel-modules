@@ -1,9 +1,6 @@
 <?php
 
-
 namespace Laravel\Modules\Support;
-
-
 
 use Illuminate\Support\Str;
 
@@ -15,7 +12,7 @@ class ModuleFunctions
     public function __construct($module, $rview = null)
     {
         $this->module = $module;
-        $this->viewmodule = $rview ? $rview :  Str::lower($module);
+        $this->viewmodule = $rview ? $rview : Str::lower($module);
     }
 
     /**
@@ -41,6 +38,6 @@ class ModuleFunctions
      */
     public function view($view = null, $data = [], $mergeData = [])
     {
-        return view($view?$this->viewName($view):$view, $data, $mergeData);
+        return view($view ? $this->viewName($view) : $view, $data, $mergeData);
     }
 }

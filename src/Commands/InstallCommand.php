@@ -83,7 +83,7 @@ class InstallCommand extends Command
      * @param string $name
      * @param string $version
      * @param string $type
-     * @param bool   $tree
+     * @param bool $tree
      */
     protected function install($name, $version = 'dev-master', $type = 'composer', $tree = false)
     {

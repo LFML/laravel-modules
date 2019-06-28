@@ -106,7 +106,7 @@ class SeedMakeCommand extends GeneratorCommand
      *
      * @return string
      */
-    public function getDefaultNamespace() : string
+    public function getDefaultNamespace(): string
     {
         return $this->laravel['modules']->config('paths.generator.seeder.path', 'Database/Seeders');
     }

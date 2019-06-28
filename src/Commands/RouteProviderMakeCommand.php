@@ -57,13 +57,13 @@ class RouteProviderMakeCommand extends GeneratorCommand
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
         return (new Stub('/route-provider.stub', [
-            'NAMESPACE'        => $this->getClassNamespace($module),
-            'CLASS'            => $this->getFileName(),
+            'NAMESPACE' => $this->getClassNamespace($module),
+            'CLASS' => $this->getFileName(),
             'MODULE_NAMESPACE' => $this->laravel['modules']->config('namespace'),
-            'MODULE'           => $this->getModuleName(),
-            'WEB_ROUTES_PATH'  => $this->getWebRoutesPath(),
-            'API_ROUTES_PATH'  => $this->getApiRoutesPath(),
-            'LOWER_NAME'       => $module->getLowerName(),
+            'MODULE' => $this->getModuleName(),
+            'WEB_ROUTES_PATH' => $this->getWebRoutesPath(),
+            'API_ROUTES_PATH' => $this->getApiRoutesPath(),
+            'LOWER_NAME' => $module->getLowerName(),
         ]))->render();
     }
 
@@ -105,7 +105,7 @@ class RouteProviderMakeCommand extends GeneratorCommand
         return '/' . $this->laravel['modules']->config('stubs.files.routes/api', 'Routes/api.php');
     }
 
-    public function getDefaultNamespace() : string
+    public function getDefaultNamespace(): string
     {
         return $this->laravel['modules']->config('paths.generator.provider.path', 'Providers');
     }

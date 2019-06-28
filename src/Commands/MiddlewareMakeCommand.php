@@ -33,7 +33,7 @@ class MiddlewareMakeCommand extends GeneratorCommand
      */
     protected $description = 'Create a new middleware class for the specified module.';
 
-    public function getDefaultNamespace() : string
+    public function getDefaultNamespace(): string
     {
         return $this->laravel['modules']->config('paths.generator.filter.path', 'Http/Middleware');
     }
@@ -60,7 +60,7 @@ class MiddlewareMakeCommand extends GeneratorCommand
 
         return (new Stub('/middleware.stub', [
             'NAMESPACE' => $this->getClassNamespace($module),
-            'CLASS'     => $this->getClass(),
+            'CLASS' => $this->getClass(),
         ]))->render();
     }
 

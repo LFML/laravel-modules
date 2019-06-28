@@ -1,4 +1,5 @@
 <?php
+
 if (!function_exists('module')) {
     /**
      * @param $module
@@ -11,8 +12,7 @@ if (!function_exists('module')) {
     }
 }
 
-
-if (! function_exists('module_path')) {
+if (!function_exists('module_path')) {
     function module_path($name)
     {
         $module = app('modules')->find($name);
@@ -34,11 +34,11 @@ if (!function_exists('module_make_path')) {
     }
 }
 
-if (! function_exists('config_path')) {
+if (!function_exists('config_path')) {
     /**
      * Get the configuration path.
      *
-     * @param  string $path
+     * @param string $path
      * @return string
      */
     function config_path($path = '')
@@ -47,11 +47,11 @@ if (! function_exists('config_path')) {
     }
 }
 
-if (! function_exists('public_path')) {
+if (!function_exists('public_path')) {
     /**
      * Get the path to the public folder.
      *
-     * @param  string  $path
+     * @param string $path
      * @return string
      */
     function public_path($path = '')

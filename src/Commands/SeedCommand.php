@@ -56,8 +56,8 @@ class SeedCommand extends Command
     }
 
     /**
-     * @throws RuntimeException
      * @return RepositoryInterface
+     * @throws RuntimeException
      */
     public function getModuleRepository(): RepositoryInterface
     {
@@ -72,9 +72,8 @@ class SeedCommand extends Command
     /**
      * @param $name
      *
-     * @throws RuntimeException
-     *
      * @return Module
+     * @throws RuntimeException
      */
     public function getModuleByName($name)
     {
@@ -191,8 +190,8 @@ class SeedCommand extends Command
     /**
      * Report the exception to the exception handler.
      *
-     * @param  \Symfony\Component\Console\Output\OutputInterface  $output
-     * @param  \Throwable  $e
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param \Throwable $e
      * @return void
      */
     protected function renderException($output, \Throwable $e)
@@ -203,7 +202,7 @@ class SeedCommand extends Command
     /**
      * Report the exception to the exception handler.
      *
-     * @param  \Throwable  $e
+     * @param \Throwable $e
      * @return void
      */
     protected function reportException(\Throwable $e)

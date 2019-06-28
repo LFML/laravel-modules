@@ -11,9 +11,8 @@ use Laravel\Modules\Support\Config\GenerateConfigReader;
 class Migrator
 {
     /**
-     * Pingpong Module instance.
-     *
-     * @var \Laravel\Modules\Module
+     * Module instance.
+     * @var Module
      */
     protected $module;
 
@@ -33,13 +32,13 @@ class Migrator
 
     /**
      * Create new instance.
-     *
-     * @param \Laravel\Modules\Module $module
+     * @param Module $module
+     * @param Application $application
      */
-    public function __construct(Module $module)
+    public function __construct(Module $module, Application $application)
     {
         $this->module = $module;
-        $this->laravel = $module->getLaravel();
+        $this->laravel = $application;
     }
 
     /**
@@ -209,7 +208,7 @@ class Migrator
     /**
      * Require in all the migration files in a given path.
      *
-     * @param array  $files
+     * @param array $files
      */
     public function requireFiles(array $files)
     {
@@ -299,7 +298,7 @@ class Migrator
         $result = $query->orderBy('migration', 'desc')->get();
 
         return collect($result)->map(function ($item) {
-            return (array) $item;
+            return (array)$item;
         })->pluck('migration');
     }
 

@@ -33,7 +33,7 @@ class PolicyMakeCommand extends GeneratorCommand
      */
     protected $description = 'Create a new policy class for the specified module.';
 
-    public function getDefaultNamespace() : string
+    public function getDefaultNamespace(): string
     {
         return $this->laravel['modules']->config('paths.generator.policies.path', 'Policies');
     }
@@ -60,7 +60,7 @@ class PolicyMakeCommand extends GeneratorCommand
 
         return (new Stub('/policy.plain.stub', [
             'NAMESPACE' => $this->getClassNamespace($module),
-            'CLASS'     => $this->getClass(),
+            'CLASS' => $this->getClass(),
         ]))->render();
     }
 

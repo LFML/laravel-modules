@@ -28,7 +28,7 @@ final class NotificationMakeCommand extends GeneratorCommand
      */
     protected $description = 'Create a new notification class for the specified module.';
 
-    public function getDefaultNamespace() : string
+    public function getDefaultNamespace(): string
     {
         return $this->laravel['modules']->config('paths.generator.notifications.path', 'Notifications');
     }
@@ -44,7 +44,7 @@ final class NotificationMakeCommand extends GeneratorCommand
 
         return (new Stub('/notification.stub', [
             'NAMESPACE' => $this->getClassNamespace($module),
-            'CLASS'     => $this->getClass(),
+            'CLASS' => $this->getClass(),
         ]))->render();
     }
 

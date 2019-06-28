@@ -31,12 +31,12 @@ class Json
     /**
      * The constructor.
      *
-     * @param mixed                             $path
+     * @param mixed $path
      * @param \Illuminate\Filesystem\Filesystem $filesystem
      */
     public function __construct($path, Filesystem $filesystem = null)
     {
-        $this->path = (string) $path;
+        $this->path = (string)$path;
         $this->filesystem = $filesystem ?: new Filesystem();
         $this->attributes = Collection::make($this->getAttributes());
     }
@@ -61,6 +61,7 @@ class Json
     public function setFilesystem(Filesystem $filesystem)
     {
         $this->filesystem = $filesystem;
+
         return $this;
     }
 
@@ -83,7 +84,7 @@ class Json
      */
     public function setPath($path)
     {
-        $this->path = (string) $path;
+        $this->path = (string)$path;
 
         return $this;
     }
@@ -91,7 +92,7 @@ class Json
     /**
      * Make new instance.
      *
-     * @param string                            $path
+     * @param string $path
      * @param \Illuminate\Filesystem\Filesystem $filesystem
      *
      * @return static
@@ -164,7 +165,7 @@ class Json
      * Set a specific key & value.
      *
      * @param string $key
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return $this
      */
@@ -214,7 +215,7 @@ class Json
      * Handle call to __call method.
      *
      * @param string $method
-     * @param array  $arguments
+     * @param array $arguments
      *
      * @return mixed
      */

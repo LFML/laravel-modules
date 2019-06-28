@@ -16,7 +16,7 @@ class GeneratorPath
             return;
         }
         $this->path = $config;
-        $this->generate = (bool) $config;
+        $this->generate = (bool)$config;
     }
 
     public function getPath()
@@ -24,7 +24,7 @@ class GeneratorPath
         return $this->path;
     }
 
-    public function generate() : bool
+    public function generate(): bool
     {
         return $this->generate;
     }
