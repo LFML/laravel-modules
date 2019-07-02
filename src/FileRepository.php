@@ -129,7 +129,7 @@ abstract class FileRepository implements RepositoryInterface, Countable
      * @param Container $app
      * @param string $args
      * @param string $path
-     * @return \Nwidart\Modules\Module
+     * @return \Laravel\Modules\Module
      */
     abstract protected function createModule(...$args);
 
@@ -157,6 +157,28 @@ abstract class FileRepository implements RepositoryInterface, Countable
         }
 
         return $modules;
+    }
+
+    public function findCustomPath($cpath)
+    {
+        $module = null;
+
+        if (!is_null($cpath) && Str::contains($cpath, ["/", "\\"])) {
+            $cpath = str_replace("\\", "/", $cpath);
+            $path = $this->getPath();
+
+            $path = Str::endsWith($path, '/') ? $path : Str::finish($path, '/');
+            $cpath = Str::startsWith($cpath, '/') ? Str::substr($cpath, 1) : $cpath;
+            $cpath = Str::endsWith($cpath, '/') ? $cpath : Str::finish($cpath, '/');
+            $mpath = "{$path}{$cpath}/module.json";
+            if ($this->getFiles()->exists($mpath)) {
+                $manifest = $mpath;
+                $name = Json::make($manifest)->get('name');
+
+                $module = $this->createModule($this->app, $name, dirname($manifest));
+            }
+        }
+        return $module;
     }
 
     /**
@@ -310,7 +332,7 @@ abstract class FileRepository implements RepositoryInterface, Countable
      */
     public function getPath(): string
     {
-        return $this->path ?: $this->config('paths.modules', base_path('Modules'));
+        return $this->path ?: $this->config('paths.modules', base_path('app_modules'));
     }
 
     /**
@@ -346,7 +368,7 @@ abstract class FileRepository implements RepositoryInterface, Countable
             }
         }
 
-        return;
+        return null;//$this->findCustomPath($name);
     }
 
     /**

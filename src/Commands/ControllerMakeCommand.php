@@ -104,7 +104,7 @@ class ControllerMakeCommand extends GeneratorCommand
             $controller .= 'Controller';
         }
 
-        return $controller;
+        return basename($controller);
     }
 
     /**

@@ -325,13 +325,13 @@ class ModuleGenerator extends Generator
     public function generateResources()
     {
         $this->console->call('module:make-seed', [
-            'name' => $this->getName(),
+            'name' => basename($this->getName()),
             'module' => $this->getName(),
             '--master' => true,
         ]);
 
         $this->console->call('module:make-provider', [
-            'name' => $this->getName() . 'ServiceProvider',
+            'name' => basename($this->getName() ). 'ServiceProvider',
             'module' => $this->getName(),
             '--master' => true,
         ]);
@@ -345,7 +345,7 @@ class ModuleGenerator extends Generator
         ]);
 
         $this->console->call('module:make-controller', [
-            'controller' => $this->getName() . 'Controller',
+            'controller' => basename($this->getName()) . 'Controller',
             'module' => $this->getName(),
         ]);
     }
@@ -456,7 +456,7 @@ class ModuleGenerator extends Generator
      */
     protected function getStudlyNameReplacement()
     {
-        return $this->getName();
+        return basename($this->getName());
     }
 
     /**
