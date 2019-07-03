@@ -46,14 +46,15 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Laravel\\Modules\\LaravelModulesServiceProvider"
+        "Laravel\\Modules\\LaravelModulesServiceProvider",
+        "Laravel\\Modules\\Providers\\BootstrapServiceProvider"
       ],
       "aliases": {
         "Module": "Laravel\\Modules\\Facades\\Module"
       }
     },
     "branch-alias": {
-      "dev-master": "2.0.1-dev"
+      "dev-master": "2.1.1-dev"
     }
   },
   "minimum-stability": "dev",

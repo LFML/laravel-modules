@@ -28,7 +28,9 @@ abstract class ModulesServiceProvider extends ServiceProvider
      */
     protected function registerModules()
     {
-        $this->app->register(BootstrapServiceProvider::class);
+        if (config("modules.register_bootstrap", false)) {
+            $this->app->register(BootstrapServiceProvider::class);
+        }
     }
 
     /**
